@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Types</title>
+        <link rel="stylesheet" href="mystyle2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">                                       
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="welcomepage.html">Home</a></li>
+                    <li><a href="thirdpage.html">History</a></li>
+                    <li><a href="fourthpage.html">Types</a></li>
+                    <li><a href="fifthpage.html">Applications</a></li>
+                    <li>
+                        <input type="search" id="searchInput" name="q" placeholder="Search">
+                        <input type="submit" value="Search">
+                    </li>
+                </ul>
+            </nav>
+            </header>
+        <h1>Types of Materials</h1>
+        
+        <div class="section">
+            <img class="img1" src="https://www.library.upenn.edu/sites/default/files/2023-04/PLC04483_RGB_LoRes.jpg">
+            <p class="text"> Material scientists use diverse types of materials in processing, composing and discovering new kinds of materials. In this page, we will tacke few of the kinds they use.  </p>
+        </div>
+        <button id="typesOfMats" onclick="fadeIn()">Types of Materials</button>
+        <p id="typesOfMatsText"></p>
+        <div id="matsTypeButtons">
+            <button id="button2" class="hidden" onclick="showTextMetals()">Metals</button>
+            <p id="metalText" class="hidden"></p>
+            <button id="button3" class="hidden" onclick="showTextPolymers()">Polymers</button>
+            <p id="polymersText" class="hidden"></p>
+            <button id="button4" class="hidden" onclick="showTextCeramics()">Ceramics</button>
+            <p id="ceramicsText" class="hidden"></p>
+        </div>
+    </body>
+    <script>
+        function fadeIn() {
+            var element = document.getElementById("typesOfMatsText");
+            element.classList.remove("hidden");
+            element.classList.add("fade-in");
+            
+            var button2 = document.getElementById("button2");
+            var button3 = document.getElementById("button3");
+            button2.classList.remove("hidden");
+            button2.classList.add("fade-in");
+            button3.classList.remove("hidden");
+            button3.classList.add("fade-in");
+
+            var button4 = document.getElementById("button4");
+            button4.classList.remove("hidden");
+            button4.classList.add("fade-in");
+        }
+        function showTextMetals(){
+            var textMetals = document.getElementById("metalText");
+            textMetals.classList.remove("hidden");
+            textMetals.innerHTML = "Materials scientists investigate the composition, characteristics, and behavior of diverse materials, such as metals, in order to comprehend the fundamental ideas and uses of these materials. Materials scientists look at the role that metallic bonding—a situation in which all of the solid's valence electrons are shared—plays in giving metals their distinctive characteristics. This knowledge is essential to the development and optimization of metal alloys, the design of sophisticated materials for particular applications, and the enhancement of manufacturing procedures in the electronics, aerospace, automotive, and construction industries. In order to meet a variety of technological difficulties and societal demands, materials scientists can develop new materials with improved performance, durability, and functionality by exploring the subtleties of metallic characteristics.";
+        }
+        function showTextPolymers(){
+            var textPolymers = document.getElementById("polymersText");
+            textPolymers.classList.remove("hidden");
+            textPolymers.innerHTML = "Polymer science is an essential branch of materials science that explores the complex structures and characteristics of polymers, which are long-chain molecules made up of monomer units that repeat. Polymers are present in everything and can be found in plastics, makeup, textiles, and even biological molecules like DNA. Creating cutting-edge products for a variety of industries requires an understanding of the synthesis, behavior, and applications of polymers. Polymer scientists are essential to the development of customized, high-tech materials, the streamlining of production procedures, and the investigation of environmentally benign and biodegradable substitutes for current sustainability issues. Their breadth of experience provides avenues for meaningful involvement in industries such as packaging, healthcare, textiles, automotive, and more.";
+        }
+        function showTextCeramics(){
+            var textCeramics = document.getElementById("ceramicsText");
+            textCeramics.classList.remove("hidden");
+            textCeramics.innerHTML = "A ceramic is an inorganic, non-metallic material. It could have both glassy and crystalline characteristics. Heat can be used to create or densify ceramics, which are normally hard and chemically inert.  Beyond just ceramics and plates, ceramics also includes clay, cement, bricks, tiles, and glass, to name just a few. Ceramic materials are utilized in electronics because they can be insulators, superconductors, semiconductors, or ferroelectrics based on their composition. A wide range of items, including cooktops, race car brakes, fiber optics, artificial joints, spark plugs, micropositioners, chemical sensors, self-lubricating bearings, body armor, and skis, are also made of ceramics.";
+        }
+    </script>
+</html>

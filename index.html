@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>practice</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href=style.css>
+    </head>
+    <body>
+        <form id="createAccount" action="welcomepage.html" method="GET">
+            <div id="result">
+                <div class="title">
+                    <h1 id="welcomeMessage">Welcome to 𝓯𝓻𝓮𝓪𝓴𝔂 Material Sciences!</h1>
+                    <h2>Create Your 𝓯𝓻𝓮𝓪𝓴𝔂 Account</h2>
+                </div>
+         
+                <div class="inputGroup">
+                    <label for="username">𝓯𝓻𝓮𝓪𝓴𝔂 Username</label>
+                    <input type="text" id="username" placeholder="Name" name="username">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Error Message</p>
+                    
+                </div>
+        
+                <div class="inputGroup">
+                    <label for="email">𝓯𝓻𝓮𝓪𝓴𝔂 Email</label>
+                    <input type="text" id="email" placeholder="Email" name="email">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Error Message</p>
+
+                </div>
+             
+                <div class="inputGroup">
+                    <label for="password">𝓯𝓻𝓮𝓪𝓴𝔂 Password</label>
+                    <input type="password" id="password" placeholder="Password" name="password">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Error Message</p>
+
+                </div>
+       
+                <div class="inputGroup">
+                    <label for="confirmPassword">Confirm 𝓯𝓻𝓮𝓪𝓴𝔂 Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Password" name="confirmPassword">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Error Message</p>
+                </div>
+            
+
+            <button type="submit" class="buttonSubmit">Submit</button>
+            </div>
+        </form>
+    </body>
+    <script>
+        const form = document.querySelector('#createAccount');
+        const usernameInput = document.querySelector('#username');
+        const emailInput = document.querySelector('#email');
+        const passwordInput = document.querySelector('#password');
+        const confirmPasswordInput = document.querySelector('#confirmPassword');
+
+
+        form.addEventListener('submit', (event)=>{  
+            validateForm();
+            console.log(isFormValid());
+            if (isFormValid()) {
+                form.submit();
+            } else {
+                event.preventDefault();
+            }
+        });
+
+        function isFormValid() {
+            const inputContainers = form.querySelectorAll('.inputGroup');
+            let result = true;
+            inputContainers.forEach((container) => {
+                if (container.classList.contains('error')) {
+                    result = false;
+                }
+            });
+            return result;
+        }
+
+
+            function validateForm() {
+
+                if (usernameInput.value.trim()==''){
+                    setError(usernameInput, 'Username cannot be empty.');
+                }else if(usernameInput.value.trim().length <5 || usernameInput.value.trim().length >25) {
+                    setError(usernameInput, 'Username should not be less than 5 characters and greater than 25 characters.');
+                }else{
+                    setSuccess(usernameInput);
+                }
+                if (emailInput.value.trim()==''){
+                    setError(emailInput, 'Email address needed.');
+                }else if(isEmailValid(emailInput.value)){
+                    setSuccess(emailInput);
+                }else{
+                    setError(emailInput, 'Provide valid email address');
+                }
+                if(passwordInput.value.trim()==''){
+                    setError(passwordInput, 'Password can not be empty');
+                }else if(passwordInput.value.trim().length <6 || passwordInput.value.trim().length >20){
+                    setError(passwordInput, 'Password min 6 max 20 charecters');
+                }else {
+                    setSuccess(passwordInput);
+                }
+                if(confirmPasswordInput.value.trim()==''){
+                    setError(confirmPasswordInput, 'Password can not be empty');
+                }else if(confirmPasswordInput.value !== passwordInput.value){
+                    setError(confirmPasswordInput, 'Password does not match');
+                }else {
+                    setSuccess(confirmPasswordInput);
+                }
+            }
+
+
+            function setError(element, errorMessage) {
+                const parent = element.parentElement;
+                if (parent.classList.contains('success')){
+                    parent.classList.remove('success');
+                }
+                parent.classList.add('error');
+                const paragraph = parent.querySelector('p');
+                paragraph.textContent = errorMessage;
+
+            }
+            function setSuccess(element) {
+                const parent = element.parentElement;
+                if (parent.classList.contains('error')){
+                    parent.classList.remove('error');
+                }
+                parent.classList.add('success');
+
+            }
+            function isEmailValid(email){
+                const reg =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+                return reg.test(email);
+            }if (isFormValid()) {
+                localStorage.setItem('username', usernameInput.value.trim());
+                form.submit();
+            } else {
+                event.preventDefault();
+            }
+
+        
+    </script>
+</html>

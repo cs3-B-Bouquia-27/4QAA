@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>History and Evolution</title>
+        <link rel="stylesheet" href="mystyle1.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">                                       
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="welcomepage.html">Home</a></li>
+                    <li><a href="thirdpage.html">History</a></li>
+                    <li><a href="fourthpage.html">Types</a></li>
+                    <li><a href="fifthpage.html">Applications</a></li>
+                    <li>
+                        <input type="search" id="searchInput" name="q" placeholder="Search">
+                        <input type="submit" value="Search">
+                    </li>
+                </ul>
+            </nav>
+            </header>
+            
+        <h1>History and Evolution of Material Sciences</h1>
+        
+        <div class="section">
+            <img class="img1" src="https://www.library.upenn.edu/sites/default/files/styles/page_hero_1x1/public/migrations/2021-05/materials-lib-shelves.jpg?itok=uzl6GI4z">
+            <p class="text"> Material Science is considered as one of the oldest forms of applied science and engineering. Throughout human history, distinct periods have frequently been distinguished in retrospect based on advancements in the capacity of humans to handle novel materials. The Stone, Bronze, and Iron Ages are a few examples. In this page, we will be exploring the historical timeline of this certain branch of science and how it evolved into what it is today. </p>
+        </div>
+        <button id="preHistory" onclick="fadeIn()">Pre-history</button>
+        <p id="preHistoryText"></p>
+        <div id="preHistoryButtons">
+            <button id="button2" class="hidden" onclick="showTextStoneAge()">Stone Age</button>
+            <p id="stoneAgeText" class="hidden"></p>
+            <button id="button3" class="hidden" onclick="showTextBronzeAge()">Bronze Age</button>
+            <p id="bronzeAgeText" class="hidden"></p>
+            <button id="button4" class="hidden" onclick="showTextIronAge()">Iron Age</button>
+            <p id="ironAgeText" class="hidden"></p>
+        </div>
+        <button id="antiquity" onclick="fadeIn2()">Antiquity</button>
+        <p id="antiquityText"></p>
+        <button id="neolithicPeriod" onclick="fadeIn3()">Middle Ages</button>
+        <p id="neolithicText"></p>
+        <button id="earlyModern" onclick="fadeIn4()">Early Modern Period</button>
+        <p id="earlyModernText"></p>
+    </body>
+    <script>
+        function fadeIn() {
+            var element = document.getElementById("preHistoryText");
+            element.classList.remove("hidden");
+            element.classList.add("fade-in");
+            element.innerHTML = "Various cultures leave many materials of their own culture as one of the only records of the past. Such was observed from ages like the Stone Age, Bronze Age, and Iron Age.";
+            
+            var button2 = document.getElementById("button2");
+            var button3 = document.getElementById("button3");
+            button2.classList.remove("hidden");
+            button2.classList.add("fade-in");
+            button3.classList.remove("hidden");
+            button3.classList.add("fade-in");
+
+            var button4 = document.getElementById("button4");
+            button4.classList.remove("hidden");
+            button4.classList.add("fade-in");
+        }
+        function showTextStoneAge(){
+            var stoneAgeText = document.getElementById("stoneAgeText");
+            stoneAgeText.classList.remove("hidden");
+            stoneAgeText.innerHTML = "Materials began in the Stone Age Era which was composed of bones, fibers, feathers, shells, animal skin, and clay were used for weapons, tools, jewelry, and shelter. One of the earliest tools was called 'Oldowan'. These tools were used mainly for scavenging which then developed into tools for farming. As the end of the stone age neared, copper, gold and silver were then used as material for ornaments and decorations."
+        }
+        function showTextBronzeAge() {
+            var bronzeAgeText = document.getElementById("bronzeAgeText");
+            bronzeAgeText.classList.remove("hidden");
+            bronzeAgeText.innerHTML = "Due to its elasticity and plasticity and its ability to be formed into intricate shapes, copper's use was very apparent in this age. But copper was too soft for large scale uses. This then lead to the discovery of Bronze which is composed of copper and arsenic.";
+        }
+        function showTextIronAge() {
+            var ironAgeText = document.getElementById("ironAgeText");
+            ironAgeText.classList.remove("hidden");
+            ironAgeText.innerHTML = "In the Iron Age, the production of glass was commenced in the ancient Near East. People in Ancient India had also developed wootz steel, the first crucible steel. Glassblowing and steelmaking flourished in this age. The Iron Pillar of Delhi, the oldest surviving example of corrosion-resistant steel, was also formed in this age."
+        }
+        function fadeIn2(){
+            var antiquity = document.getElementById("antiquityText");
+            antiquity.classList.remove("hidden");
+            antiquity.classList.add("fade-in");
+            antiquity.innerHTML = "Throughout antiquity, the advancement of materials was essential in forming civilizations. In order to build long-lasting constructions, the Roman Empire used resources including wood, stone, and dirt along with innovations like cement paste. The usage of asbestos posed health hazards, yet it was highly valued for its ability to prevent fires in Ancient Greece. Transitioning from crude to sophisticated tools was facilitated by advances in metallurgy, as goldsmiths such as Benvenuto Cellini produced gorgeous pieces. Cork was used for many different things, such as container stoppers and buoyancy aids. Intricate patterns and stained glass masterpieces were made possible by the flourishing glassblowing industry in ancient Rome. Alexandria developed become a center for glassblowing innovation, and accessories began to use polymeric composites such as keratin and petrified resin.These materials not only transformed ancient societies but also laid the groundwork for modern materials science."; 
+        }
+        function fadeIn3(){
+            var middleAges = document.getElementById("neolithicText");
+            middleAges.classList.remove("hidden");
+            middleAges.classList.add("fade-in");
+            middleAges.innerHTML = "Archaeological sites in China from the Eastern Han dynasty reveal shards that indicate proto-porcelain material emerged during the Neolithic period, with firing temperatures ranging from 1260°C to 1300°C. The introduction of porcelain under the Tang Dynasty in 8th-century China prompted the methodical development of kilns that improved both the quantity and quality of production. Tin-glazing of pottery was invented by Arabic chemists and potters in Basra, Iraq. Glassblowing techniques and the creation of stonepaste ceramics in Iraq and lustreware in Mesopotamia in the ninth century were among the innovations in glassmaking that occurred throughout the Middle Ages. In the eleventh century, Damascus steel was also developed in the Middle East. Johann Gutenberg introduced type metal alloy in the fifteenth century, while Angelo Barovier created cristallo, a transparent soda-based glass."; 
+        }
+        function fadeIn4(){
+            var earlyModern = document.getElementById("earlyModernText");
+            earlyModern.classList.remove("hidden");
+            earlyModern.classList.add("fade-in");
+            earlyModern.innerHTML = "Throughout the centuries, important turning points in the development of materials science occurred, more especially so in the Early Modern Period. Groundbreaking publications such as Georg Agricola's 'De Re Metallica' and Vannoccio Biringuccio's 'De la pirotechnia' in the 16th century established the foundation for a methodical understanding of metallurgy. In the meantime, developments like the Dutch invention of glass lenses sparked breakthroughs in telescopes and microscopy. Galileo's 'Two New Sciences,' which introduced quantitative analysis to materials science, were revolutionary discoveries made in the 17th century. Patents for innovations such as the fabrication of metallic zinc and hydraulic cement signaled advancement as we entered the eighteenth century. Numerous innovations were made in the 19th century, such as the color photographic methods, Portland cement, vulcanized rubber, and thermocouples. Additionally, innovations in production methods by Hall, Héroult, and Bayer made aluminum a commodity that could be easily obtained, enabling its broad usage in a variety of industries during the 1800s. Modern materials research and industry practices are still being shaped by these breakthroughs. "; 
+        }
+    </script>
+</html>

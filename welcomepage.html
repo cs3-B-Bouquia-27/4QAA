@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WelcomePage</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="welcomepage.html">Home</a></li>
+            <li><a href="thirdpage.html">History</a></li>
+            <li><a href="fourthpage.html">Types</a></li>
+            <li><a href="fifthpage.html">Applications</a></li>
+            <li>
+                <input type="search" id="searchInput" name="q" placeholder="Search">
+                <input type="submit" value="Search">
+            </li>
+        </ul>
+    </nav>
+    </header>
+    <center>
+        <h1 id="welcomeMessage"></h1>
+    </center>
+    <center>
+        <h3>Now that you have logged in, let us dive into the magic of Material Sciences.</h3>
+    </center>
+    <br>
+    <div class="section">
+        <img class="img1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Materials_science_tetrahedron%3Bstructure%2C_processing%2C_performance%2C_and_proprerties.svg/250px-Materials_science_tetrahedron%3Bstructure%2C_processing%2C_performance%2C_and_proprerties.svg.png">
+        <p class="text">Ever wondered how all our things had came to life? Materials science is the study of solid materials' characteristics and how a material's structure and composition affect those characteristics. It developed from a synthesis of chemistry, metallurgy, and solid-state physics since no one classical science can adequately explain the wide range of material properties. Materials can be chosen or designed for a huge range of uses, from computer microchips to structural steels, with a fundamental grasp of the sources of qualities. 
+            Therefore, engineering fields including electronics, aerospace, telecommunications, information processing, nuclear power, and energy conversion depend on materials science.        
+        </p>
+    </div>
+    <div class="section">
+        <p class="text">It began in the age of enlightenment, during the year 1940s. Material Engineers usually work with a variety of materials such as metals and alloys, ceramics and glasses, polymers, semiconductors, and more. Combining physics, chemistry, and biology, they compose and create new products that have the potential to reduce environmental impact and improve the quality of life.
+        </p>
+        <img class="img2" src="https://www.sciencebuddies.org/7ELQO7wFZf9-8fIWJ36mnleGUy4=/640x480/-/https/careerdiscovery.sciencebuddies.org/cdn/Files/1429/17/unsplash-4pM4nhHyo9M.jpg">    
+    </div>
+    <br> <br> <br> <br>
+    <center>
+    <p class="p">Click on any of the ff links to expand your knowledge and explore</p></center>
+    <div class="links-container">
+        <h1 class="hHevo"> <a href="thirdpage.html">History and Evolution </a> </h1>
+        <h1 class="matsType"> <a href="fourthpage.html"> Types of Materials </a></h1>
+        <h1 class="application"> <a href="fifthpage.html">Applications </a> </h1>
+    </div>
+    <script>
+        const welcomeMessage = document.querySelector('#welcomeMessage');
+        const username = localStorage.getItem('username');
+
+        if (username) {
+            welcomeMessage.textContent = `Welcome user ${username}!`;
+        } else {
+            welcomeMessage.textContent = `Welcome user!`;
+        };
+    </script>
+</body>
+</html>
